@@ -12,10 +12,15 @@ module.exports = {
     },
     extends: ['eslint:recommended', 'google'],
     rules: {
+        'indent': 'off',
         'semi': 'off',
         'comma-dangle': 'off',
         'require-jsdoc': 'off',
         "linebreak-style": 0,
+        'padded-blocks': 'off',
+        'arrow-parens': 'off',
+        'quotes': 'off',
+        'operator-linebreak': 'off',
         'eol-last': ["error", "never"]
     }
 }
