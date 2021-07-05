@@ -21,6 +21,7 @@ module.exports = {
         'arrow-parens': 'off',
         'quotes': 'off',
         'operator-linebreak': 'off',
-        'eol-last': ["error", "never"]
+        'eol-last': ["error", "never"],
+        'max-len': 'off'
     }
 }
