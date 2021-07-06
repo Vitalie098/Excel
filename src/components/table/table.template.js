@@ -11,8 +11,17 @@ function toColumn(col, index) {
     </div>`
 }
 
-function toCell(_, col) {
-    return `<div class="cell" contenteditable data-col="${col}"></div>`
+
+function toCell(row) {
+    return function(_, col) {
+        return `<div 
+        class="cell" 
+        contenteditable 
+        data-col="${col}"
+        data-id="${row}:${col}"
+        data-type="cell"
+        ></div>`
+    }
 }
 
 function createRow(index, content) {
@@ -41,13 +50,13 @@ export function createTable(rowsCount = 20) {
 
     rows.push(createRow(null, cols))
 
-    for (let i = 0; i < rowsCount; i++ ) {
+    for (let row = 0; row < rowsCount; row++ ) {
         const cells = new Array(columnsCount)
             .fill("")
-            .map(toCell)
+            .map(toCell(row))
             .join("")
 
-        rows.push(createRow(i + 1, cells))
+        rows.push(createRow(row + 1, cells))
     }
 
     return rows.join("")

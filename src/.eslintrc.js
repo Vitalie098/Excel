@@ -22,6 +22,7 @@ module.exports = {
         'quotes': 'off',
         'operator-linebreak': 'off',
         'eol-last': ["error", "never"],
-        'max-len': 'off'
+        'max-len': 'off',
+        "no-trailing-spaces": "off"
     }
 }
